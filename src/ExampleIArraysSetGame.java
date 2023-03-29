@@ -14,7 +14,11 @@ public class ExampleIArraysSetGame {
         Scanner scanner = new Scanner(System.in);
         int vstup = scanner.nextInt();
 
-        System.out.println(mnozina.contains(vstup) ? "Uhadol :-)" : "Neuhadol :-(");
+        if (mnozina.contains(vstup))
+            System.out.println("Uhadol :-)");
+        else
+            System.out.println("Neuhadol :-(");
+
         System.out.println("Cisla boli: " + mnozina);
     }
 }
