@@ -4,17 +4,16 @@ public class ExamplePrimeNumbers {
 
         int n1 = 10, n2 = 100;
 
-        for(int n = n1; n <= n2; n++) {
+        for(; n1 <= n2; n1++) {
 
             boolean prvocislo = true;
 
-            for(int m = 2; m < n; m++) {
-                if (n % m == 0)
-                    prvocislo = false;
+            for(int m = 2; m < n1; m++) {
+                if (n1 % m == 0) prvocislo = false;
             }
 
-            if (prvocislo == true)
-                System.out.println("Cislo " + n + " je prvocislo.");
+            if (prvocislo)
+                System.out.println("Cislo " + n1 + " je prvocislo.");
         }
     }
 }
