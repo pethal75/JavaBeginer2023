@@ -1,3 +1,5 @@
+package examples;
+
 public class ExampleIArrays1 {
 
     public static void main(String[] args) {

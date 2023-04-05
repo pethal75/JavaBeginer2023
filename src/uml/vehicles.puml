@@ -1,0 +1,19 @@
+@startuml
+
+class Vehicle {
+    String manufacturer
+    long wheels
+    Color color
+}
+
+class Bicycle extends Vehicle {
+    boolean men (woman)
+}
+
+class Car extends Vehicle {
+    String model
+    long power
+    String plateNumber
+}
+
+@enduml

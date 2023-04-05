@@ -1,3 +1,5 @@
+package examples;
+
 public class ExampleIfs1 {
 
     public static void main(String[] args) {

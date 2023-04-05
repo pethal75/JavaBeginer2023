@@ -1,0 +1,8 @@
+@startuml
+
+class Book {
+    String title
+    long count
+}
+
+@enduml

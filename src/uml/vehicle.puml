@@ -1,0 +1,10 @@
+@startuml
+
+class Vehicle {
+    String manufacturer
+    long wheels
+    Color color
+}
+
+
+@enduml

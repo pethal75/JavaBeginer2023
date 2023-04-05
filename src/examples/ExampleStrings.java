@@ -1,3 +1,5 @@
+package examples;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -7,12 +9,9 @@ import java.util.Set;
 public class ExampleStrings {
 
     public static void main(String[] args) {
-        String meno = "John" + " Surname";
+        int n=5;
 
-        List<String> mena = List.of("John", "George");
-
-        meno = meno.replace("John", "Peter");
-
-        System.out.println(meno);
+        for(int y = 0; y < n; y++) {
+        }
     }
 }

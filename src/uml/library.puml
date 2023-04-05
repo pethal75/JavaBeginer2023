@@ -1,0 +1,35 @@
+@startuml
+
+class Library {
+    String address
+    Set<Book> books
+
+    --
+    Library(name)
+
+    String getAddress()
+    Set<Book> getBooks()
+
+    orderBook(Book book)
+    returnBook(Book book)
+    --
+    toString()
+}
+
+class Book {
+    String title
+    long count
+
+    --
+    Book(title, count)
+
+    String getTitle()
+    long getCount()
+    void setCount(long)
+    --
+    toString()
+}
+
+Library *- Book
+
+@enduml

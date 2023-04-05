@@ -1,0 +1,12 @@
+@startuml
+
+class Book {
+    String title
+    long count
+    --
+    getTitle()
+    getCount()
+    setCount()
+}
+
+@enduml
