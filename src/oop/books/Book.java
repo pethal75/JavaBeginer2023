@@ -1,12 +1,22 @@
 package oop.books;
 
 public class Book {
-    private String title;
-    private long count;
+    protected String title;
+    protected long count;
+    protected final long maxCount;
 
     public Book(String initialTitle, long initialCount) {
         this.title = initialTitle;
         this.count = initialCount;
+        this.maxCount = initialCount;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public long getCount() {
+        return count;
     }
 
     public boolean borrowBook() {
@@ -18,7 +28,30 @@ public class Book {
         return true;
     }
 
+    public long returnBook(long returnCount) {
+
+        if (this.count + returnCount > this.maxCount) {
+            long possible = this.maxCount - this.count;
+            this.count = this.maxCount;
+            return possible;
+        }
+
+        this.count += returnCount;
+
+        return returnCount;
+    }
+
+    public boolean returnBook() {
+
+        return this.returnBook(1) == 1;
+    }
+
     public String toString() {
-        return "Kniha: " + this.title + " (pocet na sklade:" + this.count + ")";
+        return "Kniha: " + this.title
+                + " (pocet na sklade:"
+                + this.count
+                + " z "
+                + this.maxCount
+                + ")";
     }
 }
