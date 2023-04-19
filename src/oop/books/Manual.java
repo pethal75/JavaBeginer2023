@@ -3,8 +3,8 @@ package oop.books;
 public class Manual extends Book {
     private String topic;
 
-    public Manual(String initialTitle, long initialCount, String topic) {
-        super(initialTitle, initialCount);
+    public Manual(String initialTitle, Author author, long initialCount, String topic) {
+        super(initialTitle, author, initialCount);
 
         this.topic = topic;
     }

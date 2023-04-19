@@ -1,22 +1,36 @@
 package oop;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import oop.books.Author;
 import oop.books.Book;
+import oop.books.Library;
 import oop.books.Manual;
 
 public class MainOop {
     public static void main(String[] args) {
 
-        Book javaKniha = new Manual("Java for beginners", 5, "programming");
-        Book detska = new Book("Maly princ", 5);
+        Author authorJava = new Author("Sun", "Microsystems");
+        Book javaKniha = new Manual("Java for beginners", authorJava, 3, "programming");
 
-        System.out.println(javaKniha);
-        System.out.println(detska.getTitle() + " " + detska.getCount());
+        Author authorDetskej = new Author("Antoine", "Exupery");
+        Book detska = new Book("Maly princ", authorDetskej, 5);
+        Book detska2 = new Book("Velky princ", authorDetskej, 5);
 
-        javaKniha.borrowBook();
-        detska.borrowBook();
+        Library kniznica = new Library();
 
-        System.out.println(javaKniha);
-        System.out.println(detska);
+        kniznica.addBook(javaKniha);
+        kniznica.addBook(detska);
+        kniznica.addBook(detska2);
+
+        try {
+            Book foundBook = kniznica.findBookByAuthorSurname("Exup");
+
+            System.out.println("Najdene pre Exupery " + foundBook.getTitle());
+
+        } catch (IllegalStateException ex) {
+
+            System.out.println(ex.getMessage());
+        }
     }
 }

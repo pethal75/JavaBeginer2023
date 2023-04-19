@@ -4,9 +4,11 @@ public class Book {
     protected String title;
     protected long count;
     protected final long maxCount;
+    protected Author author;
 
-    public Book(String initialTitle, long initialCount) {
+    public Book(String initialTitle, Author author, long initialCount) {
         this.title = initialTitle;
+        this.author = author;
         this.count = initialCount;
         this.maxCount = initialCount;
     }
@@ -44,6 +46,10 @@ public class Book {
     public boolean returnBook() {
 
         return this.returnBook(1) == 1;
+    }
+
+    public Author getAuthor() {
+        return author;
     }
 
     public String toString() {

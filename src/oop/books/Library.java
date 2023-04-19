@@ -12,7 +12,7 @@ public class Library {
         books.add(book);
     }
 
-    public Book findBook(String title) {
+    public Book findBook(String title) throws IllegalStateException {
         for(int i = 0; i < books.size(); i++) {
             Book searchBook = this.books.get(i);
 
@@ -20,6 +20,17 @@ public class Library {
                 return searchBook;
         }
 
-        return null;
+        throw new IllegalStateException("Kniha nebola najdena");
+    }
+
+    public Book findBookByAuthorSurname(String surname) throws IllegalStateException {
+        for(int i = 0; i < books.size(); i++) {
+            Book searchBook = this.books.get(i);
+
+            if (searchBook.getAuthor().getSurname().contains(surname))
+                return searchBook;
+        }
+
+        throw new IllegalStateException("Kniha nebola najdena");
     }
 }
