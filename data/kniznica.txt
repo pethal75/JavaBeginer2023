@@ -1,1 +1,6 @@
-Antoine Exupery,Maly princ
+Java for beginners,3,Sun,Microsystems
+Maly princ,5,Antoine,Exupery
+Velky princ,5,Antoine,Exupery
+Winnetou 1,3,Karl,May
+Winnetou 2,3,Karl,May
+Winnetou 3,3,Karl,May

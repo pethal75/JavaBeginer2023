@@ -14,7 +14,7 @@ import oop.books.Manual;
 public class MainOop {
     public static void main(String[] args) {
 
-        Author authorJava = new Author("Sun", "Microsystems");
+        /*Author authorJava = new Author("Sun", "Microsystems");
         Book javaKniha = new Manual("Java for beginners", authorJava, 3, "programming");
 
         Author authorDetskej = new Author("Antoine", "Exupery");
@@ -27,28 +27,12 @@ public class MainOop {
         kniznica.addBook(detska);
         kniznica.addBook(detska2);
 
+        kniznica.saveBooks();*/
 
-        try {
-            File subor = new File("data" + File.separator + "kniznica.txt");
+        Library kniznica = new Library();
 
-            FileWriter fw = new FileWriter(subor);
-            fw.write("Antoine Exupery,Maly princ");
-            fw.close();
+        kniznica.loadBooks();
 
-        } catch (IOException e) {
-
-            System.out.println("Subor sa nepodarilo vytvorit " + e.getMessage());
-            return;
-        }
-
-        try {
-            List<Book> foundBooks = kniznica.findBookByAuthorSurname("Exup");
-
-            System.out.println("Najdene pre Exupery " + foundBooks.toString());
-
-        } catch (IllegalStateException ex) {
-
-            System.out.println(ex.getMessage());
-        }
+        System.out.println(kniznica);
     }
 }
