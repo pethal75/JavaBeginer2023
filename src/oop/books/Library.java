@@ -84,10 +84,8 @@ public class Library {
 
                 this.books.add(book);
             }
-
         } catch (IOException e) {
             System.out.println("Subor sa nepodarilo nacitat " + e.getMessage());
-
         }
     }
 
