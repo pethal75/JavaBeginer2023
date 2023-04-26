@@ -1,6 +1,7 @@
 package oop;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 import oop.books.Author;
 import oop.books.Book;
@@ -24,9 +25,9 @@ public class MainOop {
         kniznica.addBook(detska2);
 
         try {
-            Book foundBook = kniznica.findBookByAuthorSurname("Exup");
+            List<Book> foundBooks = kniznica.findBookByAuthorSurname("Exup");
 
-            System.out.println("Najdene pre Exupery " + foundBook.getTitle());
+            System.out.println("Najdene pre Exupery " + foundBooks.toString());
 
         } catch (IllegalStateException ex) {
 
