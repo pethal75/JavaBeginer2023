@@ -1,2 +1,3 @@
 bill,gates,0905234567,bill@microsoft.com
 steve,jobs,0903234567,steve@apple.com
+jozko,mrkvicka,12345,email@email.sk
