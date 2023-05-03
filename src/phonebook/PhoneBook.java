@@ -47,18 +47,31 @@ public class PhoneBook {
     }
 
     public void addContact(Contact contact) {
-        if (this.searchContact(contact.getName(), contact.getLastName()) == null)
+        if (this.searchContactByName(contact.getName(), contact.getLastName()).isEmpty())
             this.contacts.add(contact);
     }
 
-    public Contact searchContact(String name, String lastName) {
+    public List<Contact> searchContactByName(String name, String lastName) {
+
+        List<Contact> najdeneKontakty = new ArrayList<>();
 
         for(Contact contact: this.contacts)
             if (contact.getName().toLowerCase().equals(name.toLowerCase())
                     && contact.getLastName().toLowerCase().equals(lastName.toLowerCase()))
-                return contact;
+                najdeneKontakty.add(contact);
 
-        return null;
+        return najdeneKontakty;
+    }
+
+    public List<Contact> searchContactByPhone(String phone) {
+
+        List<Contact> najdeneKontakty = new ArrayList<>();
+
+        for(Contact contact: this.contacts)
+            if (contact.getPhone().contains(phone))
+                najdeneKontakty.add(contact);
+
+        return najdeneKontakty;
     }
 
     public void printAllContacts() {
